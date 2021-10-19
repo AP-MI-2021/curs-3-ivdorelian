@@ -3,9 +3,11 @@ def creeaza_rational(numarator: int, numitor: int):
     """
     Creeaza un numar rational ca fractie.
     :param numarator: numaratorul fractiei
-    :param numitor: numitorul fractiei
+    :param numitor: numitorul fractiei, numitor != 0
     :return: un numar rational
     """
+    if numitor == 0:
+        raise ValueError('Numitorul nu poate sa fie 0!')
     #return (numarator, numitor)
     return {'numarator': numarator,
             'numitor': numitor}
