@@ -1,4 +1,5 @@
 from Domain.numar_rational import creeaza_rational, get_str
+from Logic.file_logic import save_total, read_total
 from Logic.general_logic import aduna_rationale, simplifica_rational
 
 
@@ -24,7 +25,13 @@ def handle_add(total):
 
 def run_ui():
 
-    total = creeaza_rational(0, 1)
+    filename = 'total.txt'
+    try:
+        total = read_total(filename)
+    except Exception:
+        print('Nu s-a putut citi fisierul, incepem cu total = 0 / 1.')
+        total = creeaza_rational(0, 1)
+
     while True:
         try:
             print(f'Totalul este: {get_str(total)}')
@@ -32,8 +39,10 @@ def run_ui():
             opt = input('Optiunea voastra: ')
             if opt == '1':
                 total = handle_add(total)
+                save_total(filename, total)
             elif opt == 's':
                 total = simplifica_rational(total)
+                save_total(filename, total)
             elif opt == 'x':
                 break
             else:
