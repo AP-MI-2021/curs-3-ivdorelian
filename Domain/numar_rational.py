@@ -7,7 +7,8 @@ def creeaza_rational(numarator: int, numitor: int):
     :return: un numar rational
     """
     #return (numarator, numitor)
-    return {'numarator': numarator, 'numitor': numitor}
+    return {'numarator': numarator,
+            'numitor': numitor}
 
 def get_numarator(nr_rational):
     """

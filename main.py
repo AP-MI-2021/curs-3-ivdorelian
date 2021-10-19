@@ -37,8 +37,16 @@ Lista de activitati:
 """
 from Domain.numar_rational import creeaza_rational, get_str
 from Logic.general_logic import aduna_rationale
+from Tests.general_tests import test_aduna_rationale, test_simplifica_rational
+from UserInterface.console import run_ui
 
-nr1 = creeaza_rational(3, 2)
-nr2 = creeaza_rational(4, 3)
 
-print(get_str(aduna_rationale(nr1, nr2)))
+def main():
+    #lst = []
+    run_ui()
+
+
+if __name__ == '__main__':
+    test_aduna_rationale()
+    test_simplifica_rational()
+    main()
